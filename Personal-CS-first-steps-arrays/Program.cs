@@ -11,16 +11,16 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Console.WriteLine("Hello World!");
 
             //array normali
-            string[] primo = { "uno", "due" , "tre", "quattro" };
+            string[] primo = { "uno", "due", "tre", "quattro" };
             foreach (string x in primo)
             {
                 Console.WriteLine(x + "\n");
             }
 
-            int[] secondo = {1 , 2, 3}; 
+            int[] secondo = { 1, 2, 3 };
             foreach (int x in secondo)
             {
-                Console.WriteLine (x + "\n");
+                Console.WriteLine(x + "\n");
             }
 
             //array multidimensionali
@@ -33,9 +33,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 { "eee", "fff" }
             };
 
-            foreach(string x in array2d)
+            foreach (string x in array2d)
             {
-                    Console.WriteLine((string)x);
+                Console.WriteLine((string)x);
             };
 
 
@@ -43,20 +43,20 @@ namespace MyApp // Note: actual namespace depends on the project name.
             //3D
             string[,,] array3D =
             {
-                {   
-                    {"xxx", "yyyy","eee" }
+                {
+                    { "xxx", "yyyy", "eee" }
                 },
             };
 
             foreach (var x in array3D)
             {
-                Console.WriteLine ((string)x);
+                Console.WriteLine((string)x);
             }
 
             //irregular array
             int[][] iregular = new int[2][];
             iregular[0] = new int[] { 1, 2, 3, 4 };
-            iregular[1] = new int[] { 5, 6, 7 , 8 };
+            iregular[1] = new int[] { 5, 6, 7, 8 };
 
 
             //arraylist
@@ -64,11 +64,11 @@ namespace MyApp // Note: actual namespace depends on the project name.
             first.Add(2);
             Console.WriteLine(first[0]);
             //add bevore choosed index but must exist
-            first.Insert(0,"ciaooooo");
+            first.Insert(0, "ciaooooo");
             Console.WriteLine(first[0]);
             Console.WriteLine(first[1]);
 
-            int[] normarr = {1,2,3,4,5,6};
+            int[] normarr = { 1, 2, 3, 4, 5, 6 };
 
             first.AddRange(normarr);
             foreach (var x in first)
@@ -76,7 +76,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 Console.WriteLine("\n" + x);
             }
 
-            first.InsertRange(0,normarr);
+            first.InsertRange(0, normarr);
 
             foreach (var x in first)
             {
@@ -105,7 +105,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 Console.WriteLine("\n" + x);
             }
 
-            
+
             Console.WriteLine("\n\n\n\n");
             Console.WriteLine(first.Contains(3));
 
@@ -114,14 +114,14 @@ namespace MyApp // Note: actual namespace depends on the project name.
             //stack <=> mazzo di carte l'ultima inserita è la prima
             Stack<int> stacker = new Stack<int>(normarr);
 
-            foreach(int x in stacker)
+            foreach (int x in stacker)
             {
                 Console.WriteLine(x);
             }
 
             Console.WriteLine("\n" + stacker.Peek());
             stacker.Clear();
-            if(stacker.Count < 0)
+            if (stacker.Count < 0)
             {
                 Console.WriteLine("Franchi u was wrong");
             }
@@ -144,17 +144,17 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
 
             //Enqueue is the Add
-            
+
             queue.Enqueue(100);
-            foreach(var q in queue)
+            foreach (var q in queue)
             {
                 Console.WriteLine(q);
             }
             queue.Clear();
 
-            if(queue.Count() < 0)
+            if (queue.Count() < 0)
             {
-            Console.WriteLine("nope");
+                Console.WriteLine("nope");
             }
             else { Console.WriteLine("perfect"); }
 
@@ -168,7 +168,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
             slist.Add(3, "secondo inserimento");
             slist.Add(1, "terzo inserimento");
 
-            foreach(var x in slist)
+            foreach (var x in slist)
             {
                 Console.WriteLine($"Key: {x.Key} \nValue: {x.Value} \n\n");
             }
@@ -194,11 +194,71 @@ namespace MyApp // Note: actual namespace depends on the project name.
             htable1.Add("Key5", "sono il terzo inserimento");
             htable1.Add(1, "sono il quarto inserimento con un int come chiave");
             Console.WriteLine("\n\n\n\n\n\n");
-            
-            foreach(DictionaryEntry x in htable1)
+
+            foreach (DictionaryEntry x in htable1)
             {
                 Console.WriteLine($"Key: {x.Key}\nValue: {x.Value}");
             }
+
+            Console.WriteLine("\n\n\n\n\n\n");
+            Console.WriteLine("\n\n\n\n\n\n");
+
+
+
+
+
+            //Dictionary-> not sorted
+
+            //can be inizialized
+            IDictionary<int, string> firstDic = new Dictionary<int, string>();
+            firstDic.Add(2, "primo");
+            firstDic.Add(5, "secondo");
+            firstDic.Add(4, "terzo");
+            firstDic.Add(1, "quarto");
+            foreach (KeyValuePair<int, string> x in firstDic)
+            {
+                Console.WriteLine($"key: {x.Key} \nValue: {x.Value}");
+            }
+            Console.WriteLine("\n\n\n\n\n\n");
+
+            //can be created without IDictionary (way better.. but maybe not so secure?)
+            var secondDic = new Dictionary<int, string>();
+            secondDic.Add(1, "stoca");
+
+            foreach (var x in secondDic)
+            {
+                Console.WriteLine($"key : {x.Key} \nvalue : {x.Value} ");
+            }
+
+
+            //create created without IDic and at filled at the moment
+            var thirdDic = new Dictionary<int, string>()
+            {
+                { 3409340, "first" },
+                { 9843, "second" },
+                { 323, "third" },
+                { 31491, "fourth" },
+                { 1, "fifth" }
+            };
+
+            Console.WriteLine("\n\n\n\n\n\n");
+
+
+            foreach (var x in thirdDic)
+            {
+                Console.WriteLine($"key : {x.Key} \nvalue : {x.Value} ");
+            }
+
+            Console.WriteLine(thirdDic.ContainsKey(1));
+            Console.WriteLine(thirdDic.ContainsValue("2"));
+            thirdDic.Remove(1) ;
+            Console.WriteLine("\n\n\n\n\n\n");
+            foreach (var x in thirdDic)
+            {
+                Console.WriteLine($"key : {x.Key} \nvalue : {x.Value} ");
+            }
+
+
         }
     }
 }
