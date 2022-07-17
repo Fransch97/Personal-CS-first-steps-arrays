@@ -157,6 +157,48 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Console.WriteLine("nope");
             }
             else { Console.WriteLine("perfect"); }
+
+
+
+            //sortedlist is like ((IT) arrayassociativo ) but sorted and needs to know the types
+
+            SortedList<int, string> slist = new SortedList<int, string>();
+
+            slist.Add(2, "primo inserimento");
+            slist.Add(3, "secondo inserimento");
+            slist.Add(1, "terzo inserimento");
+
+            foreach(var x in slist)
+            {
+                Console.WriteLine($"Key: {x.Key} \nValue: {x.Value} \n\n");
+            }
+
+            //hashtable is like sortedlist (always sorted) but don't needs to know types
+            Hashtable htable = new Hashtable();
+            htable.Add("Key1", "sono il primo inserimento");
+            htable.Add("Key49", "sono il sono inserimento");
+            htable.Add("Key5", "sono il terzo inserimento");
+            htable.Add("key100", "sono il quarto inserimento");
+            Console.WriteLine("\n\n\n\n\n\n");
+            //needs DictionaryEntry to let him know that "x" is a part of htable
+            foreach (DictionaryEntry x in htable)
+            {
+                Console.WriteLine($"Key: {x.Key}\nValue: {x.Value}");
+            }
+
+
+            //hashtable by different key types he gonna order they by type 
+            Hashtable htable1 = new Hashtable();
+            htable1.Add("Key1", "sono il primo inserimento");
+            htable1.Add(2, "sono il sono inserimento con un int come chiave");
+            htable1.Add("Key5", "sono il terzo inserimento");
+            htable1.Add(1, "sono il quarto inserimento con un int come chiave");
+            Console.WriteLine("\n\n\n\n\n\n");
+            
+            foreach(DictionaryEntry x in htable1)
+            {
+                Console.WriteLine($"Key: {x.Key}\nValue: {x.Value}");
+            }
         }
     }
 }
