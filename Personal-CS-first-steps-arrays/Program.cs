@@ -108,6 +108,33 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Console.WriteLine("\n\n\n\n");
             Console.WriteLine(first.Contains(3));
 
+            Console.WriteLine("\n\n\n\n");
+            Console.WriteLine("\n\n\n\n");
+            //stack <=> mazzo di carte l'ultima inserita è la prima
+            Stack<int> stacker = new Stack<int>(normarr);
+
+            foreach(int x in stacker)
+            {
+                Console.WriteLine(x);
+            }
+
+            Console.WriteLine("\n" + stacker.Peek());
+            stacker.Clear();
+            if(stacker.Count < 0)
+            {
+                Console.WriteLine("Franchi u was wrong");
+            }
+            else
+            {
+                Console.WriteLine("U are right man ;)");
+                stacker.Push(1);
+                Console.WriteLine("\n" + stacker.Contains(1));
+            }
+
+
+
+
+
 
         }
     }
