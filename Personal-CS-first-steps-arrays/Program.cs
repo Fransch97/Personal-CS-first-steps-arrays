@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
@@ -132,10 +133,30 @@ namespace MyApp // Note: actual namespace depends on the project name.
             }
 
 
+            Console.WriteLine("\n\n\n\n");
+            Console.WriteLine("\n\n\n\n");
+            //the reverse of Stack
+            Queue<int> queue = new Queue<int>(normarr);
+            foreach (int x in queue)
+            {
+                Console.WriteLine(x);
+            }
 
 
+            //Enqueue is the Add
+            
+            queue.Enqueue(100);
+            foreach(var q in queue)
+            {
+                Console.WriteLine(q);
+            }
+            queue.Clear();
 
-
+            if(queue.Count() < 0)
+            {
+            Console.WriteLine("nope");
+            }
+            else { Console.WriteLine("perfect"); }
         }
     }
 }
